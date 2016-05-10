@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "ros_comm")
+set(ros_comm_MAINTAINER "Dirk Thomas <dthomas@osrfoundation.org>")
+set(ros_comm_DEPRECATED "")
+set(ros_comm_VERSION "1.11.16")
+set(ros_comm_BUILD_DEPENDS )
+set(ros_comm_RUN_DEPENDS "roscpp" "rospy" "rosgraph_msgs" "std_srvs" "ros" "rosbag" "rosconsole" "rosgraph" "roslaunch" "roslisp" "rosmaster" "rosmsg" "rosnode" "rosout" "rosparam" "rosservice" "rostest" "rostopic" "topic_tools" "message_filters" "roswtf" "xmlrpcpp")
+set(ros_comm_BUILDTOOL_DEPENDS "catkin")

@@ -1,0 +1,8 @@
+prefix=/home/einar/catkin_ws/install
+
+Name: master_sync_fkie
+Description: Description of master_sync_fkie
+Version: 0.4.4
+Cflags: 
+Libs: -L/home/einar/catkin_ws/install/lib 
+Requires: multimaster_msgs_fkie

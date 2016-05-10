@@ -1,0 +1,8 @@
+prefix=/home/einar/catkin_ws/devel
+
+Name: roslz4
+Description: Description of roslz4
+Version: 1.11.16
+Cflags: -I/home/einar/catkin_ws/src/ros_comm/utilities/roslz4/include -I/usr/include
+Libs: -L/home/einar/catkin_ws/devel/lib -lroslz4 -l:/usr/lib/x86_64-linux-gnu/liblz4.so
+Requires: 

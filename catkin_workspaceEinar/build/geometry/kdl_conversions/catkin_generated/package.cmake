@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "kdl_conversions")
+set(kdl_conversions_MAINTAINER "Tully Foote <tfoote@osrfoundation.org>")
+set(kdl_conversions_DEPRECATED "")
+set(kdl_conversions_VERSION "1.11.7")
+set(kdl_conversions_BUILD_DEPENDS "geometry_msgs" "orocos_kdl")
+set(kdl_conversions_RUN_DEPENDS "geometry_msgs" "orocos_kdl")
+set(kdl_conversions_BUILDTOOL_DEPENDS "catkin")

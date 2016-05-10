@@ -1,0 +1,8 @@
+set(_CATKIN_CURRENT_PACKAGE "rostest")
+set(rostest_VERSION "1.11.16")
+set(rostest_MAINTAINER "Dirk Thomas <dthomas@osrfoundation.org>")
+set(rostest_BUILD_DEPENDS "boost" "rosunit")
+set(rostest_RUN_DEPENDS "boost" "rosgraph" "roslaunch" "rosmaster" "rospy" "rosunit")
+set(rostest_DEPRECATED "")
+set(rostest_BUILDTOOL_DEPENDS "catkin")
+set(rostest_BUILDTOOL_DEPENDS_catkin_VERSION_GTE "0.5.78")

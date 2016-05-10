@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "standalonedemo")
+set(standalonedemo_MAINTAINER "Einar <einis92@gmail.com>")
+set(standalonedemo_DEPRECATED "")
+set(standalonedemo_VERSION "1.0.0")
+set(standalonedemo_BUILD_DEPENDS "geometry_msgs" "roscpp" "std_msgs" "turtlesim")
+set(standalonedemo_RUN_DEPENDS "geometry_msgs" "roscpp" "std_msgs" "turtlesim")
+set(standalonedemo_BUILDTOOL_DEPENDS "catkin")

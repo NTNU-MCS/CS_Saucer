@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "provpos")
+set(provpos_MAINTAINER "ROS User <rosuser@test.com>")
+set(provpos_DEPRECATED "")
+set(provpos_VERSION "1.0.0")
+set(provpos_BUILD_DEPENDS "roscpp" "std_msgs")
+set(provpos_RUN_DEPENDS "roscpp" "std_msgs")
+set(provpos_BUILDTOOL_DEPENDS "catkin")

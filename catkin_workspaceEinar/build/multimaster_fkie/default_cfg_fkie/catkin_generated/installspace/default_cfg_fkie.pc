@@ -1,0 +1,8 @@
+prefix=/home/einar/catkin_ws/install
+
+Name: default_cfg_fkie
+Description: Description of default_cfg_fkie
+Version: 0.4.4
+Cflags: 
+Libs: -L/home/einar/catkin_ws/install/lib 
+Requires: multimaster_msgs_fkie roslaunch roslib rospy

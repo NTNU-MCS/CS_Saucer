@@ -1,0 +1,8 @@
+prefix=/home/einar/catkin_ws/install
+
+Name: message_filters
+Description: Description of message_filters
+Version: 1.11.16
+Cflags: -I/home/einar/catkin_ws/install/include
+Libs: -L/home/einar/catkin_ws/install/lib -lmessage_filters
+Requires: roscpp xmlrpcpp rosconsole

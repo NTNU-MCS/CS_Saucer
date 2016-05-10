@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "ros_controller")
+set(ros_controller_MAINTAINER "ROS User <rosuser@test.com>")
+set(ros_controller_DEPRECATED "")
+set(ros_controller_VERSION "1.0.0")
+set(ros_controller_BUILD_DEPENDS "geometry_msgs" "roscpp" "std_msgs")
+set(ros_controller_RUN_DEPENDS "geometry_msgs" "roscpp" "std_msgs")
+set(ros_controller_BUILDTOOL_DEPENDS "catkin")

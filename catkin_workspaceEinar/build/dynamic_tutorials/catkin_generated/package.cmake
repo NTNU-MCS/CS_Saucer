@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "dynamic_tutorials")
+set(dynamic_tutorials_MAINTAINER "einar <einar@todo.todo>")
+set(dynamic_tutorials_DEPRECATED "")
+set(dynamic_tutorials_VERSION "0.0.0")
+set(dynamic_tutorials_BUILD_DEPENDS "dynamic_reconfigure" "roscpp" "rospy")
+set(dynamic_tutorials_RUN_DEPENDS "dynamic_reconfigure" "roscpp" "rospy")
+set(dynamic_tutorials_BUILDTOOL_DEPENDS "catkin")

@@ -1,0 +1,8 @@
+prefix=/home/einar/catkin_ws/devel
+
+Name: multimaster_msgs_fkie
+Description: Description of multimaster_msgs_fkie
+Version: 0.4.4
+Cflags: -I/home/einar/catkin_ws/devel/include
+Libs: -L/home/einar/catkin_ws/devel/lib 
+Requires: message_runtime std_msgs

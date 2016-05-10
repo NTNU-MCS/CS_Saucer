@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "q2pall")
+set(q2pall_MAINTAINER "ROS User <rosuser@test.com>")
+set(q2pall_DEPRECATED "")
+set(q2pall_VERSION "1.0.0")
+set(q2pall_BUILD_DEPENDS "geometry_msgs" "qualisys" "roscpp" "std_msgs")
+set(q2pall_RUN_DEPENDS "geometry_msgs" "qualisys" "roscpp" "std_msgs")
+set(q2pall_BUILDTOOL_DEPENDS "catkin")

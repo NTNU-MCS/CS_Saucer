@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "q2p2")
+set(q2p2_MAINTAINER "ROS User <rosuser@test.com>")
+set(q2p2_DEPRECATED "")
+set(q2p2_VERSION "1.0.0")
+set(q2p2_BUILD_DEPENDS "geometry_msgs" "qualisys" "roscpp" "std_msgs")
+set(q2p2_RUN_DEPENDS "geometry_msgs" "qualisys" "roscpp" "std_msgs")
+set(q2p2_BUILDTOOL_DEPENDS "catkin")

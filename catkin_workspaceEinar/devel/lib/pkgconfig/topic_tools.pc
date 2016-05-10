@@ -1,0 +1,8 @@
+prefix=/home/einar/catkin_ws/devel
+
+Name: topic_tools
+Description: Description of topic_tools
+Version: 1.11.16
+Cflags: -I/home/einar/catkin_ws/devel/include -I/home/einar/catkin_ws/src/ros_comm/tools/topic_tools/include
+Libs: -L/home/einar/catkin_ws/devel/lib -ltopic_tools
+Requires: message_runtime rosconsole roscpp std_msgs xmlrpcpp

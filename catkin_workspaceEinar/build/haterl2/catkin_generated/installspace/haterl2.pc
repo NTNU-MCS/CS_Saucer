@@ -1,0 +1,8 @@
+prefix=/home/einar/catkin_ws/install
+
+Name: haterl2
+Description: Description of haterl2
+Version: 1.0.0
+Cflags: 
+Libs: -L/home/einar/catkin_ws/install/lib 
+Requires: roscpp std_msgs

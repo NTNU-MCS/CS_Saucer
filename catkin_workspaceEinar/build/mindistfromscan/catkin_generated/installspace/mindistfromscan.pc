@@ -1,0 +1,8 @@
+prefix=/home/einar/catkin_ws/install
+
+Name: mindistfromscan
+Description: Description of mindistfromscan
+Version: 1.0.0
+Cflags: 
+Libs: -L/home/einar/catkin_ws/install/lib 
+Requires: roscpp sensor_msgs std_msgs

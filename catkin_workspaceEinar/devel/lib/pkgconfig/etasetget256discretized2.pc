@@ -1,0 +1,8 @@
+prefix=/home/einar/catkin_ws/devel
+
+Name: etasetget256discretized2
+Description: Description of etasetget256discretized2
+Version: 1.0.0
+Cflags: 
+Libs: -L/home/einar/catkin_ws/devel/lib 
+Requires: geometry_msgs roscpp std_msgs

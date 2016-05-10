@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "multimaster_msgs_fkie")
+set(multimaster_msgs_fkie_MAINTAINER "Alexander Tiderko <alexander.tiderko@gmail.com>")
+set(multimaster_msgs_fkie_DEPRECATED "")
+set(multimaster_msgs_fkie_VERSION "0.4.4")
+set(multimaster_msgs_fkie_BUILD_DEPENDS "message_generation" "std_msgs")
+set(multimaster_msgs_fkie_RUN_DEPENDS "message_runtime" "std_msgs")
+set(multimaster_msgs_fkie_BUILDTOOL_DEPENDS "catkin")

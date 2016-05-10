@@ -1,0 +1,5 @@
+<launch>
+  <node name="provpos_node"       pkg="provpos" type="provpos_node">  
+  <param name="my_param3"  type="double" value="1"/>  
+  </node>
+</launch>

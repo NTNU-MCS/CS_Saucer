@@ -1,0 +1,8 @@
+prefix=/home/einar/catkin_ws/devel
+
+Name: rosbag
+Description: Description of rosbag
+Version: 1.11.16
+Cflags: -I/home/einar/catkin_ws/src/ros_comm/tools/rosbag/include
+Libs: -L/home/einar/catkin_ws/devel/lib -lrosbag
+Requires: rosbag_storage rosconsole roscpp topic_tools xmlrpcpp

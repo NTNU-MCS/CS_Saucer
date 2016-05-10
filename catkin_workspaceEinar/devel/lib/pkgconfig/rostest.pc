@@ -1,0 +1,8 @@
+prefix=/home/einar/catkin_ws/devel
+
+Name: rostest
+Description: Description of rostest
+Version: 1.11.16
+Cflags: -I/home/einar/catkin_ws/src/ros_comm/tools/rostest/include -I/usr/include
+Libs: -L/home/einar/catkin_ws/devel/lib -l:/usr/lib/x86_64-linux-gnu/libboost_system.so -l:/usr/lib/x86_64-linux-gnu/libboost_thread.so -l:/usr/lib/x86_64-linux-gnu/libpthread.so
+Requires: 
