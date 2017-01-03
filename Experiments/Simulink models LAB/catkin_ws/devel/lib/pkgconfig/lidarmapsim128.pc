@@ -1,0 +1,8 @@
+prefix=/home/saucer/catkin_ws/devel
+
+Name: lidarmapsim128
+Description: Description of lidarmapsim128
+Version: 1.0.0
+Cflags: 
+Libs: -L/home/saucer/catkin_ws/devel/lib 
+Requires: geometry_msgs nav_msgs roscpp std_msgs

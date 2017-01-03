@@ -1,8 +1,0 @@
-set(_CATKIN_CURRENT_PACKAGE "test_rosparam")
-set(test_rosparam_VERSION "1.11.16")
-set(test_rosparam_MAINTAINER "Dirk Thomas <dthomas@osrfoundation.org>")
-set(test_rosparam_BUILD_DEPENDS "rostest")
-set(test_rosparam_RUN_DEPENDS )
-set(test_rosparam_DEPRECATED "")
-set(test_rosparam_BUILDTOOL_DEPENDS "catkin")
-set(test_rosparam_BUILDTOOL_DEPENDS_catkin_VERSION_GTE "0.5.68")

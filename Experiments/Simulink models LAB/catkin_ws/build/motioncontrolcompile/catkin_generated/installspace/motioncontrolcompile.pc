@@ -1,0 +1,8 @@
+prefix=/home/saucer/catkin_ws/install
+
+Name: motioncontrolcompile
+Description: Description of motioncontrolcompile
+Version: 1.0.0
+Cflags: 
+Libs: -L/home/saucer/catkin_ws/install/lib 
+Requires: geometry_msgs roscpp std_msgs

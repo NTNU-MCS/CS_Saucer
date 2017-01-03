@@ -1,0 +1,8 @@
+prefix=/home/saucer/catkin_ws/devel
+
+Name: ros_controllerniki
+Description: Description of ros_controllerniki
+Version: 1.0.0
+Cflags: 
+Libs: -L/home/saucer/catkin_ws/devel/lib 
+Requires: geometry_msgs roscpp std_msgs

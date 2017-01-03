@@ -1,8 +1,0 @@
-prefix=/home/einar/catkin_ws/devel
-
-Name: test_rosbag
-Description: Description of test_rosbag
-Version: 1.11.16
-Cflags: 
-Libs: -L/home/einar/catkin_ws/devel/lib 
-Requires: 

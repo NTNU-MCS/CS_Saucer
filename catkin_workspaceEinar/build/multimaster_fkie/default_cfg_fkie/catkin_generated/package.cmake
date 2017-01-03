@@ -1,7 +1,0 @@
-set(_CATKIN_CURRENT_PACKAGE "default_cfg_fkie")
-set(default_cfg_fkie_MAINTAINER "Alexander Tiderko <alexander.tiderko@gmail.com>")
-set(default_cfg_fkie_DEPRECATED "")
-set(default_cfg_fkie_VERSION "0.4.4")
-set(default_cfg_fkie_BUILD_DEPENDS "multimaster_msgs_fkie")
-set(default_cfg_fkie_RUN_DEPENDS "multimaster_msgs_fkie" "rospy" "roslib" "roslaunch")
-set(default_cfg_fkie_BUILDTOOL_DEPENDS "catkin")

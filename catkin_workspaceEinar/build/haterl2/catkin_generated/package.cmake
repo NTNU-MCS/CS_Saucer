@@ -1,7 +1,0 @@
-set(_CATKIN_CURRENT_PACKAGE "haterl2")
-set(haterl2_MAINTAINER "ROS User <rosuser@test.com>")
-set(haterl2_DEPRECATED "")
-set(haterl2_VERSION "1.0.0")
-set(haterl2_BUILD_DEPENDS "roscpp" "std_msgs")
-set(haterl2_RUN_DEPENDS "roscpp" "std_msgs")
-set(haterl2_BUILDTOOL_DEPENDS "catkin")

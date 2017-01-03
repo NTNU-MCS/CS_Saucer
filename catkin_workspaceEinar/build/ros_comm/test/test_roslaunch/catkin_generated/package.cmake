@@ -1,8 +1,0 @@
-set(_CATKIN_CURRENT_PACKAGE "test_roslaunch")
-set(test_roslaunch_VERSION "1.11.16")
-set(test_roslaunch_MAINTAINER "Dirk Thomas <dthomas@osrfoundation.org>")
-set(test_roslaunch_BUILD_DEPENDS "rostest")
-set(test_roslaunch_RUN_DEPENDS )
-set(test_roslaunch_DEPRECATED "")
-set(test_roslaunch_BUILDTOOL_DEPENDS "catkin")
-set(test_roslaunch_BUILDTOOL_DEPENDS_catkin_VERSION_GTE "0.5.68")

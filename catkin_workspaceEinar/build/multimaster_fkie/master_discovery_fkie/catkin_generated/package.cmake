@@ -1,7 +1,0 @@
-set(_CATKIN_CURRENT_PACKAGE "master_discovery_fkie")
-set(master_discovery_fkie_MAINTAINER "Alexander Tiderko <alexander.tiderko@gmail.com>")
-set(master_discovery_fkie_DEPRECATED "")
-set(master_discovery_fkie_VERSION "0.4.4")
-set(master_discovery_fkie_BUILD_DEPENDS "std_srvs" "multimaster_msgs_fkie")
-set(master_discovery_fkie_RUN_DEPENDS "std_srvs" "multimaster_msgs_fkie" "rospy" "roslib" "rosgraph" "python-avahi" "avahi-daemon")
-set(master_discovery_fkie_BUILDTOOL_DEPENDS "catkin")

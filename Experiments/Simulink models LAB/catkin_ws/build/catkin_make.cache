@@ -1,0 +1,2 @@
+etasetget256discretized2:lidarmapsim128:mappingsimulator:motioncontrolcompile:path2setpoint:q2p2:q2pall:qualisys:ros_controller:ros_controllerniki:vesselsimulator
+-DCATKIN_DEVEL_PREFIX=/home/saucer/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/saucer/catkin_ws/install -G Unix Makefiles

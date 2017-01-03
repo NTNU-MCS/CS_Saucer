@@ -1,7 +1,0 @@
-set(_CATKIN_CURRENT_PACKAGE "etalist2etaset")
-set(etalist2etaset_MAINTAINER "ROS User <rosuser@test.com>")
-set(etalist2etaset_DEPRECATED "")
-set(etalist2etaset_VERSION "1.0.0")
-set(etalist2etaset_BUILD_DEPENDS "geometry_msgs" "roscpp" "std_msgs")
-set(etalist2etaset_RUN_DEPENDS "geometry_msgs" "roscpp" "std_msgs")
-set(etalist2etaset_BUILDTOOL_DEPENDS "catkin")

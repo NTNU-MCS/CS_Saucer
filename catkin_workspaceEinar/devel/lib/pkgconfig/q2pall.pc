@@ -1,8 +1,0 @@
-prefix=/home/einar/catkin_ws/devel
-
-Name: q2pall
-Description: Description of q2pall
-Version: 1.0.0
-Cflags: 
-Libs: -L/home/einar/catkin_ws/devel/lib 
-Requires: geometry_msgs qualisys roscpp std_msgs

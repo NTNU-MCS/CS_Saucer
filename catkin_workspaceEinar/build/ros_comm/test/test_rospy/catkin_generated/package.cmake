@@ -1,8 +1,0 @@
-set(_CATKIN_CURRENT_PACKAGE "test_rospy")
-set(test_rospy_VERSION "1.11.16")
-set(test_rospy_MAINTAINER "Dirk Thomas <dthomas@osrfoundation.org>")
-set(test_rospy_BUILD_DEPENDS "genmsg" "rostest" "std_msgs" "test_rosmaster")
-set(test_rospy_RUN_DEPENDS )
-set(test_rospy_DEPRECATED "")
-set(test_rospy_BUILDTOOL_DEPENDS "catkin")
-set(test_rospy_BUILDTOOL_DEPENDS_catkin_VERSION_GTE "0.5.68")

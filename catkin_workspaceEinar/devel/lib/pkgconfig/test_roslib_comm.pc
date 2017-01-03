@@ -1,8 +1,0 @@
-prefix=/home/einar/catkin_ws/devel
-
-Name: test_roslib_comm
-Description: Description of test_roslib_comm
-Version: 1.11.16
-Cflags: -I/home/einar/catkin_ws/devel/include
-Libs: -L/home/einar/catkin_ws/devel/lib 
-Requires: 

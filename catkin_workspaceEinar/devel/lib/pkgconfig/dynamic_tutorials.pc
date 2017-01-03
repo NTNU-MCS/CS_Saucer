@@ -1,8 +1,0 @@
-prefix=/home/einar/catkin_ws/devel
-
-Name: dynamic_tutorials
-Description: Description of dynamic_tutorials
-Version: 0.0.0
-Cflags: -I/home/einar/catkin_ws/devel/include
-Libs: -L/home/einar/catkin_ws/devel/lib 
-Requires: 

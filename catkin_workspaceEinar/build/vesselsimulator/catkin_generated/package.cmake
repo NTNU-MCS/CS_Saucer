@@ -1,7 +1,0 @@
-set(_CATKIN_CURRENT_PACKAGE "vesselsimulator")
-set(vesselsimulator_MAINTAINER "ROS User <rosuser@test.com>")
-set(vesselsimulator_DEPRECATED "")
-set(vesselsimulator_VERSION "1.0.0")
-set(vesselsimulator_BUILD_DEPENDS "geometry_msgs" "roscpp" "std_msgs")
-set(vesselsimulator_RUN_DEPENDS "geometry_msgs" "roscpp" "std_msgs")
-set(vesselsimulator_BUILDTOOL_DEPENDS "catkin")

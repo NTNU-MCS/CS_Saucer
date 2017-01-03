@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+
+<launch>
+<node pkg="path2setpoint" type="path2setpoint_node" name="path2setpoint_node"/>
+<node pkg="mappingsimulator" type="mappingsimulator_node" name="mappingsimulator_node"/>
+<node pkg="motioncontrolcompile" type="motioncontrolcompile_node" name="motioncontrolcompile_node"/>
+</launch>

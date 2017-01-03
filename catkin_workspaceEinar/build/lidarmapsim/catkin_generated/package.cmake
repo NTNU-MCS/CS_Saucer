@@ -1,7 +1,0 @@
-set(_CATKIN_CURRENT_PACKAGE "lidarmapsim")
-set(lidarmapsim_MAINTAINER "ROS User <rosuser@test.com>")
-set(lidarmapsim_DEPRECATED "")
-set(lidarmapsim_VERSION "1.0.0")
-set(lidarmapsim_BUILD_DEPENDS "geometry_msgs" "nav_msgs" "roscpp" "std_msgs")
-set(lidarmapsim_RUN_DEPENDS "geometry_msgs" "nav_msgs" "roscpp" "std_msgs")
-set(lidarmapsim_BUILDTOOL_DEPENDS "catkin")

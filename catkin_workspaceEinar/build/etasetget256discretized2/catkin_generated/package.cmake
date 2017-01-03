@@ -1,7 +1,0 @@
-set(_CATKIN_CURRENT_PACKAGE "etasetget256discretized2")
-set(etasetget256discretized2_MAINTAINER "ROS User <rosuser@test.com>")
-set(etasetget256discretized2_DEPRECATED "")
-set(etasetget256discretized2_VERSION "1.0.0")
-set(etasetget256discretized2_BUILD_DEPENDS "geometry_msgs" "roscpp" "std_msgs")
-set(etasetget256discretized2_RUN_DEPENDS "geometry_msgs" "roscpp" "std_msgs")
-set(etasetget256discretized2_BUILDTOOL_DEPENDS "catkin")

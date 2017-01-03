@@ -1,0 +1,8 @@
+prefix=/home/saucer/catkin_ws/devel
+
+Name: mappingsimulator
+Description: Description of mappingsimulator
+Version: 1.0.0
+Cflags: 
+Libs: -L/home/saucer/catkin_ws/devel/lib 
+Requires: geometry_msgs nav_msgs roscpp std_msgs

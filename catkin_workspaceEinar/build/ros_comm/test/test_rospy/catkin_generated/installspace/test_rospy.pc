@@ -1,8 +1,0 @@
-prefix=/home/einar/catkin_ws/install
-
-Name: test_rospy
-Description: Description of test_rospy
-Version: 1.11.16
-Cflags: -I/home/einar/catkin_ws/install/include
-Libs: -L/home/einar/catkin_ws/install/lib 
-Requires: 

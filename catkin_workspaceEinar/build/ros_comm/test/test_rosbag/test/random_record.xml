@@ -1,5 +1,0 @@
-<launch>
-  <test time-limit="100" test-name="random_record_01" pkg="test_rosbag" type="random_record.py" args="54321 10 10.0">
-    <env name="PYTHONPATH" value="/home/einar/catkin_ws/src/ros_comm/test/test_rosbag/src:$(env PYTHONPATH)"/>
-  </test>
-</launch>

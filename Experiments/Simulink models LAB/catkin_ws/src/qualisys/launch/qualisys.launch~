@@ -1,0 +1,13 @@
+<launch>
+  <node pkg="qualisys"
+    type="qualisys_node"
+    name="qualisys"
+    output="screen">
+    <param name="server_address" value="192.168.0.10"/>
+    <param name="base_port" value="22222"/>
+    <param name="publish_tf" value="false"/>
+  </node>
+    <param name="ZeroPosY" value="10.0"/>
+ </node>
+<node pkg="q2p2" type="q2p2_node" name="q2p2_node"/>
+</launch>

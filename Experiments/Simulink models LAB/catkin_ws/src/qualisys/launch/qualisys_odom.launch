@@ -1,0 +1,10 @@
+<launch>
+  <arg name="model"/>
+  <arg name="output" default="screen"/>
+
+  <node pkg="qualisys" type="qualisys_odom_node" name="$(arg model)"
+    output="$(arg output)">
+    <param name="qualisys_fps" type="double" value="100"/>
+    <remap from="~qualisys_subject" to="/qualisys/$(arg model)"/>
+  </node>
+</launch>

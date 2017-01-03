@@ -1,7 +1,0 @@
-set(_CATKIN_CURRENT_PACKAGE "mindistfromscan")
-set(mindistfromscan_MAINTAINER "ROS User <rosuser@test.com>")
-set(mindistfromscan_DEPRECATED "")
-set(mindistfromscan_VERSION "1.0.0")
-set(mindistfromscan_BUILD_DEPENDS "roscpp" "sensor_msgs" "std_msgs")
-set(mindistfromscan_RUN_DEPENDS "roscpp" "sensor_msgs" "std_msgs")
-set(mindistfromscan_BUILDTOOL_DEPENDS "catkin")

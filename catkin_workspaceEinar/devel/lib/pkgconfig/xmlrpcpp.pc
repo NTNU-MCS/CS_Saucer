@@ -1,8 +1,0 @@
-prefix=/home/einar/catkin_ws/devel
-
-Name: xmlrpcpp
-Description: Description of xmlrpcpp
-Version: 1.11.16
-Cflags: -I/home/einar/catkin_ws/src/ros_comm/utilities/xmlrpcpp/include
-Libs: -L/home/einar/catkin_ws/devel/lib -lxmlrpcpp
-Requires: cpp_common

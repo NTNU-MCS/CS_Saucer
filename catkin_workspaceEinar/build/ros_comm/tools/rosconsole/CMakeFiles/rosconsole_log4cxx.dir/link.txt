@@ -1,1 +1,0 @@
-/usr/bin/c++  -fPIC    -shared -Wl,-soname,librosconsole_log4cxx.so -o /home/einar/catkin_ws/devel/lib/librosconsole_log4cxx.so CMakeFiles/rosconsole_log4cxx.dir/src/rosconsole/impl/rosconsole_log4cxx.cpp.o /home/einar/catkin_ws/devel/lib/librosconsole_backend_interface.so -llog4cxx -lboost_regex -lboost_system -lboost_thread -lpthread -Wl,-rpath,/home/einar/catkin_ws/devel/lib: 
