@@ -1,7 +1,0 @@
-set(_CATKIN_CURRENT_PACKAGE "qualisys")
-set(qualisys_MAINTAINER "Kartik Mohta <kartikmohta@gmail.com>, Ke Sun <sunke.polyu@gmail.com>, Chao Qu <quchao@seas.upenn.edu>")
-set(qualisys_DEPRECATED "")
-set(qualisys_VERSION "0.0.1")
-set(qualisys_BUILD_DEPENDS "message_generation" "geometry_msgs" "roscpp" "tf")
-set(qualisys_RUN_DEPENDS "message_runtime" "geometry_msgs" "roscpp" "tf")
-set(qualisys_BUILDTOOL_DEPENDS "catkin")

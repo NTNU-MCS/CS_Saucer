@@ -1,7 +1,0 @@
-set(_CATKIN_CURRENT_PACKAGE "node_manager_fkie")
-set(node_manager_fkie_MAINTAINER "Alexander Tiderko <alexander.tiderko@gmail.com>")
-set(node_manager_fkie_DEPRECATED "")
-set(node_manager_fkie_VERSION "0.4.4")
-set(node_manager_fkie_BUILD_DEPENDS "multimaster_msgs_fkie" "master_discovery_fkie" "diagnostic_msgs")
-set(node_manager_fkie_RUN_DEPENDS "multimaster_msgs_fkie" "master_discovery_fkie" "master_sync_fkie" "default_cfg_fkie" "rospy" "roslib" "rosmsg" "rosgraph" "roslaunch" "rosservice" "dynamic_reconfigure" "rqt_reconfigure" "diagnostic_msgs" "python_qt_binding" "python-paramiko" "python-docutils" "screen" "xterm" "rqt_gui")
-set(node_manager_fkie_BUILDTOOL_DEPENDS "catkin")

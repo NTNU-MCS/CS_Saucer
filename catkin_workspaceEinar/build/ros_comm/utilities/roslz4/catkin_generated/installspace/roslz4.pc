@@ -1,8 +1,0 @@
-prefix=/home/einar/catkin_ws/install
-
-Name: roslz4
-Description: Description of roslz4
-Version: 1.11.16
-Cflags: -I/home/einar/catkin_ws/install/include -I/usr/include
-Libs: -L/home/einar/catkin_ws/install/lib -lroslz4 -l:/usr/lib/x86_64-linux-gnu/liblz4.so
-Requires: 

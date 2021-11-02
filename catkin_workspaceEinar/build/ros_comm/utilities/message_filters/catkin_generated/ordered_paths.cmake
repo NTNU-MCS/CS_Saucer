@@ -1,1 +1,0 @@
-set(ORDERED_PATHS "/home/einar/catkin_ws/src/ros_comm/tools/rostest/include;/usr/include")

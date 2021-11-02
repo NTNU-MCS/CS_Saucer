@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-
-<launch>
-  <node pkg="ros_controllerniki" type="ros_controllerniki_node" name="ros_controllerniki_node"/>
-  <node pkg="vesselsimulator" type="vesselsimulator_node" name="vesselsimulator_node"/>
-  <node pkg="lidarmapsim" type="lidarmapsim_node" name="lidarmapsim_node"/>
-  <node pkg="etasetget256discretized" type="etasetget256discretized_node" name="etasetget256discretized_node"/>
-</launch>
-

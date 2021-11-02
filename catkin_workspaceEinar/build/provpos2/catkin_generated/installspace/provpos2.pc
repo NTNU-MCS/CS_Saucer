@@ -1,8 +1,0 @@
-prefix=/home/einar/catkin_ws/install
-
-Name: provpos2
-Description: Description of provpos2
-Version: 1.0.0
-Cflags: 
-Libs: -L/home/einar/catkin_ws/install/lib 
-Requires: roscpp std_msgs

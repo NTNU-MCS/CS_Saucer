@@ -1,8 +1,0 @@
-prefix=/home/einar/catkin_ws/install
-
-Name: hector2p2
-Description: Description of hector2p2
-Version: 1.0.0
-Cflags: 
-Libs: -L/home/einar/catkin_ws/install/lib 
-Requires: geometry_msgs roscpp std_msgs

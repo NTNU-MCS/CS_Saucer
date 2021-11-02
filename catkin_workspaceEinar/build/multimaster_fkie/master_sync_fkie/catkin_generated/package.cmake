@@ -1,7 +1,0 @@
-set(_CATKIN_CURRENT_PACKAGE "master_sync_fkie")
-set(master_sync_fkie_MAINTAINER "Alexander Tiderko <alexander.tiderko@gmail.com>")
-set(master_sync_fkie_DEPRECATED "")
-set(master_sync_fkie_VERSION "0.4.4")
-set(master_sync_fkie_BUILD_DEPENDS "multimaster_msgs_fkie" "master_discovery_fkie")
-set(master_sync_fkie_RUN_DEPENDS "rospy" "roslib" "rosgraph" "multimaster_msgs_fkie" "master_discovery_fkie")
-set(master_sync_fkie_BUILDTOOL_DEPENDS "catkin")

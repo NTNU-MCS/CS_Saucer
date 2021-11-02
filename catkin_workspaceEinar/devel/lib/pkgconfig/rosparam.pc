@@ -1,8 +1,0 @@
-prefix=/home/einar/catkin_ws/devel
-
-Name: rosparam
-Description: Description of rosparam
-Version: 1.11.16
-Cflags: 
-Libs: -L/home/einar/catkin_ws/devel/lib 
-Requires: 

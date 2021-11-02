@@ -1,7 +1,0 @@
-set(_CATKIN_CURRENT_PACKAGE "hector2p2")
-set(hector2p2_MAINTAINER "ROS User <rosuser@test.com>")
-set(hector2p2_DEPRECATED "")
-set(hector2p2_VERSION "1.0.0")
-set(hector2p2_BUILD_DEPENDS "geometry_msgs" "roscpp" "std_msgs")
-set(hector2p2_RUN_DEPENDS "geometry_msgs" "roscpp" "std_msgs")
-set(hector2p2_BUILDTOOL_DEPENDS "catkin")

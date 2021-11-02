@@ -1,8 +1,0 @@
-set(_CATKIN_CURRENT_PACKAGE "test_rostopic")
-set(test_rostopic_VERSION "1.11.16")
-set(test_rostopic_MAINTAINER "Dirk Thomas <dthomas@osrfoundation.org>")
-set(test_rostopic_BUILD_DEPENDS "genmsg" "genpy" "rostest" "std_msgs")
-set(test_rostopic_RUN_DEPENDS )
-set(test_rostopic_DEPRECATED "")
-set(test_rostopic_BUILDTOOL_DEPENDS "catkin")
-set(test_rostopic_BUILDTOOL_DEPENDS_catkin_VERSION_GTE "0.5.68")

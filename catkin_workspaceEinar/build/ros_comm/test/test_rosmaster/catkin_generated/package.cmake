@@ -1,8 +1,0 @@
-set(_CATKIN_CURRENT_PACKAGE "test_rosmaster")
-set(test_rosmaster_VERSION "1.11.16")
-set(test_rosmaster_MAINTAINER "Dirk Thomas <dthomas@osrfoundation.org>")
-set(test_rosmaster_BUILD_DEPENDS "genmsg" "rosgraph" "rostest" "std_msgs")
-set(test_rosmaster_RUN_DEPENDS )
-set(test_rosmaster_DEPRECATED "")
-set(test_rosmaster_BUILDTOOL_DEPENDS "catkin")
-set(test_rosmaster_BUILDTOOL_DEPENDS_catkin_VERSION_GTE "0.5.68")

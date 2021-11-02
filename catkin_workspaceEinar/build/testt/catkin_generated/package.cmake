@@ -1,7 +1,0 @@
-set(_CATKIN_CURRENT_PACKAGE "testt")
-set(testt_MAINTAINER "ROS User <rosuser@test.com>")
-set(testt_DEPRECATED "")
-set(testt_VERSION "1.0.0")
-set(testt_BUILD_DEPENDS "geometry_msgs" "nav_msgs" "roscpp" "std_msgs")
-set(testt_RUN_DEPENDS "geometry_msgs" "nav_msgs" "roscpp" "std_msgs")
-set(testt_BUILDTOOL_DEPENDS "catkin")

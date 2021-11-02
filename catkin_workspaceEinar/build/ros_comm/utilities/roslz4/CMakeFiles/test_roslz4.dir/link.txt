@@ -1,1 +1,0 @@
-/usr/bin/c++       CMakeFiles/test_roslz4.dir/test/roslz4_test.cpp.o  -o /home/einar/catkin_ws/devel/lib/roslz4/test_roslz4  -L/home/einar/catkin_ws/build/gtest -rdynamic ../../../gtest/libgtest.so /home/einar/catkin_ws/devel/lib/libroslz4.so -lpthread -llz4 -Wl,-rpath,/home/einar/catkin_ws/build/gtest:/home/einar/catkin_ws/devel/lib 

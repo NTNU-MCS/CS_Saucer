@@ -1,8 +1,0 @@
-prefix=/home/einar/catkin_ws/install
-
-Name: vesselsimulator
-Description: Description of vesselsimulator
-Version: 1.0.0
-Cflags: 
-Libs: -L/home/einar/catkin_ws/install/lib 
-Requires: geometry_msgs roscpp std_msgs
