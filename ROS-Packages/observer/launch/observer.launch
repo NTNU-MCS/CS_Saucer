@@ -1,0 +1,6 @@
+<launch>
+    <node name="gain_server" pkg = "gain_server" type="server.py" />
+    <node name="controller" pkg="controller" type="ctrl_joy_node.py" />
+    <node name="observer" pkg = "observer" type="obs_node.py" />
+</launch>
+
