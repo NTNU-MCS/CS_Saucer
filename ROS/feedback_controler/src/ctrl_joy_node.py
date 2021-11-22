@@ -12,11 +12,11 @@ with open(r"{0}/src/controller/src/params.yaml".format(cwd)) as file:
 
 if __name__ == '__main__':
 
-    controllNodeInit()
+    node = controlNodeInit()
     r = rospy.Rate(params["runfrequency"])
 
     while not rospy.is_shutdown():
         loop()
         r.sleep()
     
-    nodeEnd()
+    nodeEnd(node)

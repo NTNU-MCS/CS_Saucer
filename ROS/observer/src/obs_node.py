@@ -13,7 +13,7 @@ with open(r"{0}/src/observer/src/params.yaml".format(cwd)) as file:
 
 if __name__ == '__main__':
 
-    observerNodeInit()
+    node = observerNodeInit()
     r = rospy.Rate(params["runfrequency"]) # Usually set to 100 Hz
 
     while not rospy.is_shutdown():
@@ -21,4 +21,4 @@ if __name__ == '__main__':
         loop()
         r.sleep()
     
-    nodeEnd()
+    nodeEnd(node)

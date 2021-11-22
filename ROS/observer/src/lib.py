@@ -103,7 +103,7 @@ tau  = Tau()
 
 # Initialize observer node
 def observerNodeInit():
-    global pub, node
+    global node
     node = rospy.init_node('Observer node')
     rospy.Subscriber("/qualisys/CSS/odom", Odometry, qualisys.updateQualisysOdometry)
     rospy.Subscriber("CSS/u", Float64MultiArray, Udata.updateU)

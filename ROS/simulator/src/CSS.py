@@ -13,7 +13,7 @@ class CSS:
     kinematics and dynamics of the ship, as well as the operations required to
     "move" the ship over one time-step
     """
-    ### Main data of the C/S Enterprise. Do not touch ###
+    ### Main data of the C/S Saucer. Do not touch ###
     _M = np.array([[9.51, 0.0, 0.0], [0.0, 9.51, 0], [0.0, 0.0, 0.116]])  # Inertia matrix
     _D = np.diag(np.array([1.96, 1.96, 0.196]))
 
