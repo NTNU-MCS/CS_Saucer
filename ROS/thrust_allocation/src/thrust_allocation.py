@@ -19,7 +19,7 @@ def extended_thrust_allocation(tau)
 # authour: Mathias N. Solheim                 #
 # date: 11.09.2021                            #
 #---------------------------------------------#
-
+    
     return u
 ### End of student code ###
 
@@ -38,6 +38,7 @@ def fixed_thrust_allocation(tau):
 #---------------------------------------------#
 
     r = 0.138 # Radius to vessels center of origin
+    alpha =  np.array[np.pi, 2*np.pi/3, 4*np.pis/3]             # Fixed azimuth angles
     B = np.array([[0, np.sin(2*np.pi/3), np.sin(4*np.pi/3)]
                   [1, np.cos(2*np.pi/3), np.cos(4*np.pi/3)]
                   [r, r, r]])

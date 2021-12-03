@@ -18,6 +18,11 @@ def Rzyx(psi):
 
 def R2(psi):
     R = np.array([[math.cos(psi), -math.sin(psi)],[math.sin(psi), math.cos(psi)]])
+    return R
+
+def R2_dot(psi):
+    R = np.array([[-math.sin(psi), -math.cos(psi)],[-math.cos(psi), math.sin(psi)]])
+    return 
 
 def yaw2quat(psi):
     """

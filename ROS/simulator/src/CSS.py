@@ -16,7 +16,10 @@ class CSS:
     ### Main data of the C/S Saucer. Do not touch ###
     _M = np.array([[9.51, 0.0, 0.0], [0.0, 9.51, 0], [0.0, 0.0, 0.116]])  # Inertia matrix
     _D = np.diag(np.array([1.96, 1.96, 0.196]))
-
+    _rt = 0.138 # Radius-distance to thrusters
+    _alphat = np.array([np.pi/4, 2*np.pi/3, 4*np.pi/3]) # Angle of thrusters relative to x-axis of body frame
+    _lx = np.array([_rt*np.cos(_alphat[0]), _rt*np.cos(_alphat[1]), _rt*np.cos(_alphat[2])])
+    _ly = np.array([_rt*np.sin(_alphat[0]), _rt*np.sin(_alphat[1]), _rt*np.sin(_alphat[2])])
     ### Initialization ###
 
     def __init__(self, eta0):
@@ -30,8 +33,10 @@ class CSS:
         self.odom = Odometry() #Msg to be published
         self.odom.header.frame_id = "odom"
         self.tauMsg = Float64MultiArray()
+        self.etaMsg = Float64MultiArray()
         self.pubOdom = rospy.Publisher('/qualisys/CSS/odom', Odometry, queue_size=1)
         self.pubTau = rospy.Publisher('/CSS/tau', Float64MultiArray, queue_size=1)
+        self.pubEta = rospy.Publisher('/CSS/eta', Float64MultiArray, queue_size=1)
         self.subU = rospy.Subscriber('/CSS/u', Float64MultiArray, self.callback)
         self.u = np.zeros(6)
         self.publishOdom() #Publishes the initial state to odometry
@@ -40,32 +45,30 @@ class CSS:
     
     ### Computation ###
     def set_Dv(self):
-        u = self.nu[0]
-        v = self.nu[1]
-        r = self.nu[2]
-        new_D = np.array([[d11, 0, 0], [0, d22, d23], [0, d32, d33]])
-        self.D = new_D  # Designates the damping matrix
+        u = np.abs(self.nu[0])
+        v = np.abs(self.nu[1])
+        r = np.abs(self.nu[2])
+        new_Dv = np.array([[7.095*u, 0, 0], [0, 7.095*v, 0], [0, 0, 7.095*r]])
+        self.Dv = new_Dv  # Designates the damping matrix
 
     def set_C(self):
-        u = self.nu[0]
-        v = self.nu[1]
         r = self.nu[2]
-        c13 = ((-self._m*self._xg + self._A[2])*r + (-self._m + self._A[1])*v)[0]
-        c23 = ((self._m - self._A[0])*u)[0]
-        new_C = np.array([[0, 0, c13], [0, 0, c23], [-c13, -c23, 0]])
+        c12 = -9.51*r
+        c21 = -c12 
+        new_C = np.array([[0, c12, 0], [c21, 0, ], [0, 0, 0]])
         self.C = new_C
 
     def set_tau(self, u):
         u_t = np.transpose(np.take(u, [0, 1, 2])[np.newaxis])
-        alpha = np.take(u, [3, 4])
-        c1 = 0
-        c2 = math.cos(alpha[0])
-        c3 = math.cos(alpha[1])
-        s1 = 1
-        s2 = math.sin(alpha[0])
-        s3 = math.sin(alpha[1])
-        B = np.array([[c1, c2, c3], [s1, s2, s3], [self.lx1*s1-self.ly1*c1, self.lx2*s2 - self.ly2*c2, self.lx3*s3-self.ly3*c3]])
-        new_tau = (B @ self._K) @ u_t
+        alpha = np.take(u, [3, 5])
+        c1 = math.cos(alpha[0])
+        c2 = math.cos(alpha[1])
+        c3 = math.cos(alpha[2])
+        s1 = math.sin(alpha[0])
+        s2 = math.sin(alpha[1])
+        s3 = math.sin(alpha[2])
+        B = np.array([[c1, c2, c3], [s1, s2, s3], [self._lx[0]*s1-self._ly[0]*c1, self._lx[1]*s2 - self._ly[1]*c2, self._lx[2]*s3-self._ly[2]*c3]])
+        new_tau = B @ u_t
         self.tau = new_tau
 
     def set_eta(self):
@@ -77,7 +80,7 @@ class CSS:
 
     def set_nu(self):
         A = self._M
-        b = self.tau - np.dot((self.C + self.D), self.nu)
+        b = self.tau - np.dot((self.C + self._D + self.Dv), self.nu)
         self.nu_dot = np.linalg.solve(A, b)
         self.nu = self.nu + self.dt*self.nu_dot  # Integration, forward euler
 
@@ -124,10 +127,15 @@ class CSS:
         self.tauMsg.data = self.tau
         self.pubTau.publish(self.tauMsg)
 
+    def publishEta(self):
+        self.etaMsg.data = self.eta
+        self.pubEta.publish(self.etaMsg)
+
+
     #Upon a new U, move the ship
     def callback(self, msg):
         self.u = msg.data
-        #self.set_C()  # Coreolis matrix
+        self.set_C()  # Coreolis matrix
         self.set_D()  # Compute damping matrix
         self.set_tau(self.u) # Compute the force vector
         self.publishTau()   # Publish the tau, this is needed for the Observer :)

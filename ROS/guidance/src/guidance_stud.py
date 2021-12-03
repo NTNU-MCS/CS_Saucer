@@ -9,7 +9,7 @@ import numpy as np
 
 ### Write your code here ###
 
-def path_planning():
+def waypoint_generations():
 """---------------------------------------------------------------------------- 
 # Name: straight_line_path                                                    #  
 # Input: Sensor data                                                          #
@@ -23,9 +23,7 @@ def path_planning():
 # Authour: Mathias N. Solheim                                                 #
 # Date: 10.09.2021                                                            #
 ----------------------------------------------------------------------------"""
-
-
-    return something something
+return 0 
 
 def decoupled_straight_line_path(U_ref, s, p0, p1):
 """---------------------------------------------------------------------------- 

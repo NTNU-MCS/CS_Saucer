@@ -20,7 +20,7 @@ def heading_control(psi, r, psi_d, psi_d_dot, psi_d_ddot, k1_psi):
 
     z1_dot_psi = -k1_psi*z1_psi + z2_r
 
-    alpha_dot_psi = -k1_psi*z1_dot_psi + psi_d_ddots
+    alpha_dot_r = -k1_psi*z1_dot_psi + psi_d_ddot
 
     return alpha_r, alpha_dot_r, z2_r
 
@@ -29,6 +29,8 @@ def positional_control(psi, r, p, v, p_d, p_d_dot, p_d_ddot, s, s_dot, w, v_s, v
     # Compute rotational matrix
     R = R2(psi)
     R_T = R.T
+    R_dot = R2_dot(psi)
+    R_dot_T = R_dot.T
     S = np.array([[0, -1],[1, 0]])
     # Compute positonal error 
     z1_p = R_T@(p - p_d)
@@ -40,29 +42,29 @@ def positional_control(psi, r, p, v, p_d, p_d_dot, p_d_ddot, s, s_dot, w, v_s, v
     #Virtual control 
 
 
-def clf_control_law(alpha, alpha_dot, z2, K2, xi):
-    M = #Define mass matrix for vessel here
-    D = #Define damping matrix for vessel here
-    xi_dot = z2
-    tau = -K2@z2 - gamma@xi + D@alpha + M@alpha_dot
-    return xi_dot, tau 
+def clf_control_law(alpha, alpha_dot, z2, K2, b_hat):
+    M = np.array([[9.51, 0.0, 0.0], [0.0, 9.51, 0], [0.0, 0.0, 0.116]])  # Inertia matrix
+    D = np.diag(np.array([1.96, 1.96, 0.196]))
+    # xi_dot = z2 #integrator
+    tau = -K2@z2 - b_hat + D@alpha + M@alpha_dot
+    return tau 
 
-def fld_control_law(v, alpha_dot, z2, K2, xi):
-    M = #Define mass matrix for vessel here
-    D = #Define damping matrix for vessel here
-    xi_dot = z2
-    tau = D@v - M@(K2@z2 + gamma@xi - alpha_dot)
-    return xi_dot, tau
+def fld_control_law(v, alpha_dot, z2, K2, b_hat):
+    M = np.diag(np.array([9.51, 9.51, 0.116]))  # Inertia matrix
+    D = np.diag(np.array([1.96, 1.96, 0.196]))
+    #xi_dot = z2 #integrator
+    tau = D@v - M@(K2@z2 + b_hat - alpha_dot)
+    return tau
 
-def consecrate(alpha_r, alpha_dot_r, alpha_v, alpha_dot_v, z2_r, z2_r):
+def consecrate(alpha_r, alpha_dot_r, alpha_v, alpha_dot_v, z2_v, z2_r):
     z2 = np.array([[0][0][z2_r]])
     alpha = np.array([[0][0][alpha_r]])
     alpha_dot = np.array([[0][0][alpha_dot_r]])
 
-    for i in range(1,2)
+    for i in range(1,2):
         z2[1][i] = z2_v[i]
         alpha[1][i] = alpha_v[i]
-        alpha_dot[1][i] = alpha_dot_r[i]
+        alpha_dot[1][i] = alpha_dot_v[i]
     return z2, alpha, alpha_dot
 
 
