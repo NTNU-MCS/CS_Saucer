@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 import math
-import numpy as np
 import rospy
-from math_tools import yaw2quat, Rzyx, rad2pipi
+import numpy as np
+from math_tools import *
 from nav_msgs.msg import Odometry
 from std_msgs.msg import Float64MultiArray
 
@@ -17,7 +17,7 @@ class CSS:
     _M = np.array([[9.51, 0.0, 0.0], [0.0, 9.51, 0], [0.0, 0.0, 0.116]])  # Inertia matrix
     _D = np.diag(np.array([1.96, 1.96, 0.196]))
     _rt = 0.138 # Radius-distance to thrusters
-    _alphat = np.array([np.pi/4, 2*np.pi/3, 4*np.pi/3]) # Angle of thrusters relative to x-axis of body frame
+    _alphat = np.array([np.pi/2, 4*np.pi/3, 2*np.pi/3]) # Angle of thrusters relative to x-axis of body frame
     _lx = np.array([_rt*np.cos(_alphat[0]), _rt*np.cos(_alphat[1]), _rt*np.cos(_alphat[2])])
     _ly = np.array([_rt*np.sin(_alphat[0]), _rt*np.sin(_alphat[1]), _rt*np.sin(_alphat[2])])
     ### Initialization ###
@@ -34,45 +34,48 @@ class CSS:
         self.odom.header.frame_id = "odom"
         self.tauMsg = Float64MultiArray()
         self.etaMsg = Float64MultiArray()
-        self.pubOdom = rospy.Publisher('/qualisys/CSS/odom', Odometry, queue_size=1)
-        self.pubTau = rospy.Publisher('/CSS/tau', Float64MultiArray, queue_size=1)
-        self.pubEta = rospy.Publisher('/CSS/eta', Float64MultiArray, queue_size=1)
-        self.subU = rospy.Subscriber('/CSS/u', Float64MultiArray, self.callback)
+        self.pubOdom = rospy.Publisher('/qualisys/CSS/odom/', Odometry, queue_size=1)
+        self.pubTau = rospy.Publisher('/CSS/tau/', Float64MultiArray, queue_size=1)
+        self.pubEta = rospy.Publisher('/CSS/eta/', Float64MultiArray, queue_size=1)
+        self.subU = rospy.Subscriber('/CSS/u/', Float64MultiArray, self.callback)
         self.u = np.zeros(6)
-        self.publishOdom() #Publishes the initial state to odometry
-        self.publishTau() #Publishes the initial tau
         self.dt = 0.01
     
     ### Computation ###
     def set_Dv(self):
-        u = np.abs(self.nu[0])
-        v = np.abs(self.nu[1])
-        r = np.abs(self.nu[2])
+        u = np.abs(self.nu[0][0])
+        v = np.abs(self.nu[1][0])
+        r = np.abs(self.nu[2][0])
         new_Dv = np.array([[7.095*u, 0, 0], [0, 7.095*v, 0], [0, 0, 7.095*r]])
         self.Dv = new_Dv  # Designates the damping matrix
+        
 
     def set_C(self):
-        r = self.nu[2]
+        r = self.nu[2][0]
         c12 = -9.51*r
         c21 = -c12 
-        new_C = np.array([[0, c12, 0], [c21, 0, ], [0, 0, 0]])
+        new_C = np.array([[0, c12, 0], [c21, 0, 0], [0, 0, 0]])
         self.C = new_C
 
     def set_tau(self, u):
-        u_t = np.transpose(np.take(u, [0, 1, 2])[np.newaxis])
-        alpha = np.take(u, [3, 5])
+        u_t = np.take(u, [0, 1, 2])
+        u_t = u_t[:, np.newaxis]
+        alpha = np.take(u, [3, 4, 5])
         c1 = math.cos(alpha[0])
         c2 = math.cos(alpha[1])
         c3 = math.cos(alpha[2])
         s1 = math.sin(alpha[0])
         s2 = math.sin(alpha[1])
         s3 = math.sin(alpha[2])
-        B = np.array([[c1, c2, c3], [s1, s2, s3], [self._lx[0]*s1-self._ly[0]*c1, self._lx[1]*s2 - self._ly[1]*c2, self._lx[2]*s3-self._ly[2]*c3]])
+        #B = np.array([[c1, c2, c3], [s1, s2, s3], [self._lx[0]*s1-self._ly[0]*c1, self._lx[1]*s2 - self._ly[1]*c2, self._lx[2]*s3-self._ly[2]*c3]])
+        B = np.array([[0, np.sin(2*np.pi/3), np.sin(4*np.pi/3)],
+                 [1, np.cos(2*np.pi/3), np.cos(4*np.pi/3)],
+                 [0.138, 0.138, 0.138]])
         new_tau = B @ u_t
         self.tau = new_tau
 
     def set_eta(self):
-        psi = self.eta[2]
+        psi = rad2pipi(self.eta[2])
         R = Rzyx(psi)
         self.eta_dot = np.dot(R, self.nu)
         self.eta = self.eta + self.dt*self.eta_dot
@@ -136,9 +139,8 @@ class CSS:
     def callback(self, msg):
         self.u = msg.data
         self.set_C()  # Coreolis matrix
-        self.set_D()  # Compute damping matrix
+        self.set_Dv()  # Compute damping matrix
         self.set_tau(self.u) # Compute the force vector
-        self.publishTau()   # Publish the tau, this is needed for the Observer :)
         self.set_nu()   # Compute the velocity
         self.set_eta()  # Compute the position
         self.publishOdom() # Publish the new position
@@ -153,7 +155,7 @@ def main():
    
     rospy.init_node('HIL_simulation')
     rate = rospy.Rate(100)
-    rospy.Subscriber("CSS/u", Float64MultiArray, ship.callback)
+    rospy.Subscriber("/CSS/u/", Float64MultiArray, ship.callback)
   
     while not rospy.is_shutdown():
         ship.publishOdom()

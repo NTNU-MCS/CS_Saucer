@@ -19,8 +19,8 @@ def callback(config, level):
     --------------- \n
     Controller gains: \n
     --------------- \n
-    Kp: [{Kp}]\n
-    Kd: [{Kd}]\n 
+    K1: [{K1}]\n
+    K2: [{K2}]\n 
     Ki: [{Ki}]\n
     mu: {mu}\n 
     U_ref: {U_ref} \n""".format(**config))

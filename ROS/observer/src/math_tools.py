@@ -16,14 +16,6 @@ def Rzyx(psi):
                   [0, 0, 1]])
     return R
 
-def R2(psi):
-    R = np.array([[math.cos(psi), -math.sin(psi)],[math.sin(psi), math.cos(psi)]])
-    return R
-
-def R2_dot(psi):
-    R_dot = np.array([[-math.sin(psi), -math.cos(psi)],[-math.cos(psi), math.sin(psi)]])
-    return R_dot
-
 def yaw2quat(psi):
     """
     Return the quternions of yaw

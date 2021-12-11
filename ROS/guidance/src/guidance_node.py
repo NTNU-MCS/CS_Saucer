@@ -1,19 +1,18 @@
 #!/usr/bin/env python3
 import rospy
-from ctrl_joy import loop
-from lib import controllNodeInit, nodeEnd
+from guidance_stud import loop
+from lib import guidanceNodeInit, nodeEnd
 import yaml
 import os
 
 cwd = os.getcwd()
-with open(r"{0}/src/guidance/src/params.yaml".format(cwd)) as file:
-    params = yaml.load(file, Loader=yaml.FullLoader)
+
 
 
 if __name__ == '__main__':
 
-    controllNodeInit()
-    r = rospy.Rate(params["runfrequency"])
+    guidanceNodeInit()
+    r = rospy.Rate(100)
 
     while not rospy.is_shutdown():
         loop()

@@ -53,6 +53,7 @@ add_message_files(
   FILES
   observer_message.msg
   reference_message.msg
+  s_message.msg
 )
 
 ## Generate services in the 'srv' folder

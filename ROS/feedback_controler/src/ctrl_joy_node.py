@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import rospy
 from joystick_controler import loop
-from lib import controllNodeInit, nodeEnd
+from lib import controlNodeInit, nodeEnd
 import yaml
 import os
 
