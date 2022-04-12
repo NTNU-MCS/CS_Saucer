@@ -11,14 +11,14 @@ from std_msgs.msg import Float64MultiArray
 def heading_control(psi, r, psi_d, psi_d_dot, psi_d_ddot, k1_psi):
     # Compute heading error
     z1_psi = psi - psi_d
-    #Virtual control 
+    #Virtual control
     alpha_r = -k1_psi*z1_psi + psi_d_dot
-    
+
     # Compute heading rate error
     z2_r = r - alpha_r
-    
+
     z1_dot_psi = -k1_psi*z1_psi + z2_r
-    
+
     alpha_dot_r = -k1_psi*z1_dot_psi + psi_d_ddot
 
     return alpha_r, alpha_dot_r, z2_r, z1_psi
@@ -31,14 +31,14 @@ def positional_control(psi, r, p, v, p_d, p_d_dot, p_d_ddot, s_dot, w, v_s, v_st
     S = np.array([[0, -1],[1, 0]])
     R_dot = R@(r*S)
     R_dot_T = np.transpose(R_dot)
-    # Compute positonal error 
+    # Compute positonal error
     z1_p = R_T@(p - p_d)
     alpha_v = -K1@z1_p +  R_T@p_d_dot*v_s
     z2_v = v - alpha_v
     z1_p_dot = -K1@z1_p - r*S@z1_p + z2_v - R_T@p_d_dot*w
     alpha_dot_v = -K1@z1_p_dot + R_dot_T@p_d_dot*v_s + R_T@p_d_ddot*v_s*s_dot + R_T@p_d_dot*(v_ss*s_dot + v_st)
     return alpha_v, alpha_dot_v, z2_v, z1_p
-    #Virtual control 
+    #Virtual control
 
 
 def clf_control_law(alpha, alpha_dot, z2, K2, b_hat, z1):
@@ -46,7 +46,7 @@ def clf_control_law(alpha, alpha_dot, z2, K2, b_hat, z1):
     D = np.diag(np.array([1.96, 1.96, 0.196]))
     # xi_dot = z2 #integrator
     tau = -K2@z2 - b_hat + D@alpha + M@alpha_dot
-    return tau 
+    return tau
 
 def fld_control_law(v, alpha_dot, z2, K2, b_hat):
     M = np.diag(np.array([9.51, 9.51, 0.116]))  # Inertia matrix
@@ -70,7 +70,7 @@ def consecrate(alpha_r, alpha_dot_r, alpha_v, alpha_dot_v, z2_v, z2_r, z1_p, z1_
 
 def saturation(tau):
     F_max = 1                                              # [N]
-    T_max = 0.3  
+    T_max = 0.3
     #Initialize output-array
 
     if (tau[0][0] == 0 and tau[1][0] == 0):                                        # [Nm]
@@ -82,7 +82,7 @@ def saturation(tau):
     if (ck < 1):
          tau[0][0] = ck*tau[0][0]
          tau[1][0] = ck*tau[1][0]
-    
+
     # Saturate yaw
     if  (np.abs(tau[2]) >= T_max):
         tau[2][0] = np.sign(tau[2])*T_max
@@ -90,7 +90,7 @@ def saturation(tau):
     return tau
 
 ### End of custom code
-    
+
 def loop():
     # Extract controler gains, observer estimates and heading
     K1, K2, Ki, mu, U_ref = ctrl_gains.get_data()
@@ -107,7 +107,7 @@ def loop():
     p_d, p_d_prime, p_d_prime2 = reference.get_ref()
     b_hat = b_hat[:, np.newaxis]
 
-    # Get what we need from the desired references: 
+    # Get what we need from the desired references:
     psi_d = p_d[2]
     psi_d_dot = p_d_prime[2]
     psi_d_ddot = p_d_prime2[2]
@@ -126,7 +126,7 @@ def loop():
     s, s_dot = s_p.get_s()
     v_s, v_ss, w = reference.get_speed_assignemt()
 
-    # Compute our errors and virtual control 
+    # Compute our errors and virtual control
 
     alpha_v, alpha_dot_v, z2_v, z1_p = positional_control(psi, r, p, upsilon, p_d, p_d_prime, p_d_prime2, s_dot, w, v_s, v_ts, v_ss, K1)
     alpha_r, alpha_dot_r, z2_r, z1_psi = heading_control(psi, r, psi_d, psi_d_dot, psi_d_ddot, k1)
@@ -141,4 +141,3 @@ def loop():
     """
     All calls to functions and methods should be handled inside here. loop() is called by the main-function in ctrl_node.py
     """
-  

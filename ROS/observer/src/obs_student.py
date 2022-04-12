@@ -1,14 +1,12 @@
 import rospy
 import numpy as np
 import math
-from lib import qualisys, tau, observer, obs_gains
-from math_tools import Rzyx, rad2pipi, quat2eul
+sys.path.insert(0,'')
+from src.tools.lib import qualisys, tau, observer, obs_gains
+from src.tools.math_tools import *
 
 
 ### Write your code here ###
-
-def ekf():
-    return 0
 
 def luenberger(eta, eta_hat, nu_hat, b_hat, tau, L1, L2, L3, dt):
     # Ship dynamics
@@ -20,7 +18,7 @@ def luenberger(eta, eta_hat, nu_hat, b_hat, tau, L1, L2, L3, dt):
     L1 = np.diag(L1)
     L2 = np.diag(L2)
     L3 = np.diag(L3)
-    # Compute our rotation matrices: 
+    # Compute our rotation matrices:
     psi = rad2pipi(eta[2])
     R   = Rzyx(psi)
     R_T = np.transpose(R)
@@ -33,7 +31,7 @@ def luenberger(eta, eta_hat, nu_hat, b_hat, tau, L1, L2, L3, dt):
     eta_dot_hat = R@nu_hat + L1@eta_bar
     nu_dot_hat  = M_inv@(-D@nu_hat + R_T@b_hat + R_T@L2@eta_bar + tau)
     b_dot_hat   = L3@eta_bar
-    
+
     # Euler integration
     new_eta_hat = eta_hat + dt*eta_dot_hat
     new_nu_hat  = nu_hat + dt*nu_dot_hat
@@ -60,7 +58,7 @@ def loop():
     tau_forces = tau.get_tau()
     tau_forces = tau_forces[:, np.newaxis]
     L1, L2, L3 = obs_gains.get_observer_gains()
-    
+
     # Compute new estimations
 
     new_eta_hat, new_nu_hat, new_b_hat = luenberger(eta, eta_hat, nu_hat, b_hat, tau_forces, L1, L2, L3, dt)
