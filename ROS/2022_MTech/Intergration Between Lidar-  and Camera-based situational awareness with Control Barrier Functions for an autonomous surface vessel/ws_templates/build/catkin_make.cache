@@ -1,0 +1,2 @@
+common_tools:controller:gain_server:guidance:messages:observer:simulator:thrust_allocation
+-DCATKIN_DEVEL_PREFIX=/home/dplab/ws_templates/devel -DCMAKE_INSTALL_PREFIX=/home/dplab/ws_templates/install -G Unix Makefiles

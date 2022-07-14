@@ -1,0 +1,8 @@
+prefix=/home/dplab/ws_nominal/install
+
+Name: simulator
+Description: Description of simulator
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

@@ -1,0 +1,8 @@
+prefix=/home/dplab/ws_mathias/devel
+
+Name: gain_server
+Description: Description of gain_server
+Version: 0.0.0
+Cflags: -I/home/dplab/ws_mathias/devel/include
+Libs: -L${prefix}/lib 
+Requires: 

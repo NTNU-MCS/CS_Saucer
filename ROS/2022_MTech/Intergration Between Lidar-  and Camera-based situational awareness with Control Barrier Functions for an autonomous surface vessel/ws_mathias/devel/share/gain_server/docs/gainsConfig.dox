@@ -1,0 +1,14 @@
+\subsubsection parameters ROS parameters
+
+Reads and maintains the following parameters on the ROS server
+
+- \b "~L1" : \b [str] Injection gain eta_1 min: , default: 10,15,5, max: 
+- \b "~L2" : \b [str] Injection gain eta_2 min: , default: 5,5,1, max: 
+- \b "~L3" : \b [str] Injection gain eta_3 min: , default: 0.2,0.2,0.3, max: 
+- \b "~K1" : \b [str] Proportional controller gain min: , default: 0.1,0.1,1, max: 
+- \b "~K2" : \b [str] Derivative controller gain min: , default: 0.12,0.12,0.33, max: 
+- \b "~Ki" : \b [str] Integral controller gain min: , default: 0,0,0, max: 
+- \b "~mu" : \b [double] mu min: 0.0, default: 0.0, max: 1.0
+- \b "~U_ref" : \b [double] Reference speed min: 0.0, default: 0.0, max: 10.0
+- \b "~l_p" : \b [double] Path length min: 0.0, default: 0.0, max: 10.0
+

@@ -1,0 +1,8 @@
+prefix=/home/dplab/ws_templates/devel
+
+Name: observer
+Description: Description of observer
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

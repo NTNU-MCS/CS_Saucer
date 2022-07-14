@@ -1,0 +1,7 @@
+set(ros_tools_SETUP_PY_SETUP_MODULE "distutils.core")
+set(ros_tools_SETUP_PY_VERSION "0.0.0")
+set(ros_tools_SETUP_PY_SCRIPTS "")
+set(ros_tools_SETUP_PY_PACKAGES "ros_tools")
+set(ros_tools_SETUP_PY_PACKAGE_DIRS "src/ros_tools")
+set(ros_tools_SETUP_PY_MODULES "")
+set(ros_tools_SETUP_PY_MODULE_DIRS "")

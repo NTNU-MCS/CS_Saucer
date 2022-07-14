@@ -1,0 +1,8 @@
+prefix=/home/dplab/ws_mathias/install
+
+Name: laser2PointCloud
+Description: Description of laser2PointCloud
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

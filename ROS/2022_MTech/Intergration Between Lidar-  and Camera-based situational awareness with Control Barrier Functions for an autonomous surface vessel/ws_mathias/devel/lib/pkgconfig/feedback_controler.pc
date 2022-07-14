@@ -1,0 +1,8 @@
+prefix=/home/dplab/ws_mathias/devel
+
+Name: feedback_controler
+Description: Description of feedback_controler
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

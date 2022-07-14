@@ -1,0 +1,8 @@
+prefix=/home/dplab/ws_nominal/devel
+
+Name: common_tools
+Description: Description of common_tools
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

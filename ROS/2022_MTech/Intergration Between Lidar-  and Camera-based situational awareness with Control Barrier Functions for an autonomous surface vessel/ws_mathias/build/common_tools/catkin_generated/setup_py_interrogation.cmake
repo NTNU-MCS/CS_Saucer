@@ -1,0 +1,7 @@
+set(common_tools_SETUP_PY_SETUP_MODULE "distutils.core")
+set(common_tools_SETUP_PY_VERSION "0.0.0")
+set(common_tools_SETUP_PY_SCRIPTS "")
+set(common_tools_SETUP_PY_PACKAGES "common_tools")
+set(common_tools_SETUP_PY_PACKAGE_DIRS "include/common_tools")
+set(common_tools_SETUP_PY_MODULES "")
+set(common_tools_SETUP_PY_MODULE_DIRS "")

@@ -1,0 +1,8 @@
+prefix=/home/dplab/ws_mathias/install
+
+Name: thrust_allocation
+Description: Description of thrust_allocation
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

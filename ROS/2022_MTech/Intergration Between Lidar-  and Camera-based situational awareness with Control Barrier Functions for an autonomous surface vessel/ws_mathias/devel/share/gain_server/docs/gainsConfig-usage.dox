@@ -1,0 +1,15 @@
+\subsubsection usage Usage
+\verbatim
+<node name="parameter_server_basics" pkg="parameter_server_basics" type="parameter_server_basics">
+  <param name="L1" type="str" value="10,15,5" />
+  <param name="L2" type="str" value="5,5,1" />
+  <param name="L3" type="str" value="0.2,0.2,0.3" />
+  <param name="K1" type="str" value="0.1,0.1,1" />
+  <param name="K2" type="str" value="0.12,0.12,0.33" />
+  <param name="Ki" type="str" value="0,0,0" />
+  <param name="mu" type="double" value="0.0" />
+  <param name="U_ref" type="double" value="0.0" />
+  <param name="l_p" type="double" value="0.0" />
+</node>
+\endverbatim
+
